@@ -1,0 +1,6 @@
+place the following here:
+
+gt_imgs dir
+gt.json file
+
+Also create a upload_url diretory -> wp_upload_vol/

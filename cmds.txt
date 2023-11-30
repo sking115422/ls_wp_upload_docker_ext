@@ -1,0 +1,35 @@
+# Normal Script
+docker run --rm -d -i -t \
+-v /home/spenc/nis_lab_research/docker_ls_uploader/wp_upload_vol:/mnt/uploads \
+-p 52201:22 \
+--cpus="4.0" \
+--memory="8G" \
+--name ls_upload_cont_test \
+--hostname ls_upload_cont_test \
+--entrypoint "./startup.sh" \
+--env-file /home/spenc/nis_lab_research/docker_ls_uploader/env_files/ls_docker_env_file_1.txt \
+sking115422/ls_upload_cont:v3 /bin/bash 
+
+# Test Script
+docker run -d -i -t \
+-v /home/spenc/nis_lab_research/docker_ls_uploader/wp_upload_vol:/mnt/uploads \
+-p 52201:22 \
+--cpus="4.0" \
+--memory="8G" \
+--name ls_upload_cont_test \
+--hostname ls_upload_cont_test \
+--entrypoint "./startup.sh" \
+--env-file /home/spenc/nis_lab_research/docker_ls_uploader/env_files/ls_docker_env_file_1.txt \
+sking115422/ls_upload_cont:v3 /bin/bash 
+
+# Script To Work On Docker Image
+docker run -d -i -t \
+-v /home/spenc/nis_lab_research/docker_ls_uploader/wp_upload_vol:/mnt/uploads \
+-p 52201:22 \
+--cpus="4.0" \
+--memory="8G" \
+--name ls_upload_cont \
+--hostname ls_upload_cont \
+--entrypoint "/bin/bash" \
+--env-file /home/spenc/nis_lab_research/docker_ls_uploader/env_files/ls_docker_env_file_1.txt \
+sking115422/ls_upload_cont:v3
